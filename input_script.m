@@ -24,7 +24,7 @@ nmc = 100 ;        %(no. of monte carlo iterations)
 %% Calculate rate
 for i =1:length(test_data(:,1))
     if uncertainty(i,:) < 5 & data(i,1) < data(i,2) < data(i,length(data(i,:)))
-    k(i,:) = call_solver2(data(i,:),uncertainty(i,:),length(data(1,:)),ncpmg,label{i,1},i);  
+    k(i,:) = call_solver(data(i,:),uncertainty(i,:),length(data(1,:)),ncpmg,label{i,1},i);  
     % k_unc(i,:)=calculate_uncertainity(k,data(i,:),uncertainty(i,:),length(data(1,:)),ncpmg,nmc); % not mandatory
     else
        'peak does not exchange or has low intensity'
